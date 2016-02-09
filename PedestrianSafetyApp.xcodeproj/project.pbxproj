@@ -1,0 +1,507 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		003249221C6A91AA001454B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003249211C6A91AA001454B0 /* AppDelegate.swift */; };
+		003249241C6A91AA001454B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003249231C6A91AA001454B0 /* ViewController.swift */; };
+		003249271C6A91AA001454B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 003249251C6A91AA001454B0 /* Main.storyboard */; };
+		003249291C6A91AA001454B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 003249281C6A91AA001454B0 /* Assets.xcassets */; };
+		0032492C1C6A91AA001454B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0032492A1C6A91AA001454B0 /* LaunchScreen.storyboard */; };
+		003249371C6A91AA001454B0 /* PedestrianSafetyAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003249361C6A91AA001454B0 /* PedestrianSafetyAppTests.swift */; };
+		003249421C6A91AA001454B0 /* PedestrianSafetyAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003249411C6A91AA001454B0 /* PedestrianSafetyAppUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		003249331C6A91AA001454B0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 003249161C6A91AA001454B0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0032491D1C6A91AA001454B0;
+			remoteInfo = PedestrianSafetyApp;
+		};
+		0032493E1C6A91AA001454B0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 003249161C6A91AA001454B0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0032491D1C6A91AA001454B0;
+			remoteInfo = PedestrianSafetyApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0032491E1C6A91AA001454B0 /* PedestrianSafetyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PedestrianSafetyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		003249211C6A91AA001454B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		003249231C6A91AA001454B0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		003249261C6A91AA001454B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		003249281C6A91AA001454B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0032492B1C6A91AA001454B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0032492D1C6A91AA001454B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		003249321C6A91AA001454B0 /* PedestrianSafetyAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PedestrianSafetyAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		003249361C6A91AA001454B0 /* PedestrianSafetyAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedestrianSafetyAppTests.swift; sourceTree = "<group>"; };
+		003249381C6A91AA001454B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0032493D1C6A91AA001454B0 /* PedestrianSafetyAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PedestrianSafetyAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		003249411C6A91AA001454B0 /* PedestrianSafetyAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedestrianSafetyAppUITests.swift; sourceTree = "<group>"; };
+		003249431C6A91AA001454B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0032491B1C6A91AA001454B0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0032492F1C6A91AA001454B0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0032493A1C6A91AA001454B0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		003249151C6A91AA001454B0 = {
+			isa = PBXGroup;
+			children = (
+				003249201C6A91AA001454B0 /* PedestrianSafetyApp */,
+				003249351C6A91AA001454B0 /* PedestrianSafetyAppTests */,
+				003249401C6A91AA001454B0 /* PedestrianSafetyAppUITests */,
+				0032491F1C6A91AA001454B0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0032491F1C6A91AA001454B0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0032491E1C6A91AA001454B0 /* PedestrianSafetyApp.app */,
+				003249321C6A91AA001454B0 /* PedestrianSafetyAppTests.xctest */,
+				0032493D1C6A91AA001454B0 /* PedestrianSafetyAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		003249201C6A91AA001454B0 /* PedestrianSafetyApp */ = {
+			isa = PBXGroup;
+			children = (
+				003249211C6A91AA001454B0 /* AppDelegate.swift */,
+				003249231C6A91AA001454B0 /* ViewController.swift */,
+				003249251C6A91AA001454B0 /* Main.storyboard */,
+				003249281C6A91AA001454B0 /* Assets.xcassets */,
+				0032492A1C6A91AA001454B0 /* LaunchScreen.storyboard */,
+				0032492D1C6A91AA001454B0 /* Info.plist */,
+			);
+			path = PedestrianSafetyApp;
+			sourceTree = "<group>";
+		};
+		003249351C6A91AA001454B0 /* PedestrianSafetyAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				003249361C6A91AA001454B0 /* PedestrianSafetyAppTests.swift */,
+				003249381C6A91AA001454B0 /* Info.plist */,
+			);
+			path = PedestrianSafetyAppTests;
+			sourceTree = "<group>";
+		};
+		003249401C6A91AA001454B0 /* PedestrianSafetyAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				003249411C6A91AA001454B0 /* PedestrianSafetyAppUITests.swift */,
+				003249431C6A91AA001454B0 /* Info.plist */,
+			);
+			path = PedestrianSafetyAppUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0032491D1C6A91AA001454B0 /* PedestrianSafetyApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 003249461C6A91AA001454B0 /* Build configuration list for PBXNativeTarget "PedestrianSafetyApp" */;
+			buildPhases = (
+				0032491A1C6A91AA001454B0 /* Sources */,
+				0032491B1C6A91AA001454B0 /* Frameworks */,
+				0032491C1C6A91AA001454B0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PedestrianSafetyApp;
+			productName = PedestrianSafetyApp;
+			productReference = 0032491E1C6A91AA001454B0 /* PedestrianSafetyApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		003249311C6A91AA001454B0 /* PedestrianSafetyAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 003249491C6A91AA001454B0 /* Build configuration list for PBXNativeTarget "PedestrianSafetyAppTests" */;
+			buildPhases = (
+				0032492E1C6A91AA001454B0 /* Sources */,
+				0032492F1C6A91AA001454B0 /* Frameworks */,
+				003249301C6A91AA001454B0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				003249341C6A91AA001454B0 /* PBXTargetDependency */,
+			);
+			name = PedestrianSafetyAppTests;
+			productName = PedestrianSafetyAppTests;
+			productReference = 003249321C6A91AA001454B0 /* PedestrianSafetyAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		0032493C1C6A91AA001454B0 /* PedestrianSafetyAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0032494C1C6A91AA001454B0 /* Build configuration list for PBXNativeTarget "PedestrianSafetyAppUITests" */;
+			buildPhases = (
+				003249391C6A91AA001454B0 /* Sources */,
+				0032493A1C6A91AA001454B0 /* Frameworks */,
+				0032493B1C6A91AA001454B0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0032493F1C6A91AA001454B0 /* PBXTargetDependency */,
+			);
+			name = PedestrianSafetyAppUITests;
+			productName = PedestrianSafetyAppUITests;
+			productReference = 0032493D1C6A91AA001454B0 /* PedestrianSafetyAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		003249161C6A91AA001454B0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Tufts University";
+				TargetAttributes = {
+					0032491D1C6A91AA001454B0 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+					003249311C6A91AA001454B0 = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = 0032491D1C6A91AA001454B0;
+					};
+					0032493C1C6A91AA001454B0 = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = 0032491D1C6A91AA001454B0;
+					};
+				};
+			};
+			buildConfigurationList = 003249191C6A91AA001454B0 /* Build configuration list for PBXProject "PedestrianSafetyApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 003249151C6A91AA001454B0;
+			productRefGroup = 0032491F1C6A91AA001454B0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0032491D1C6A91AA001454B0 /* PedestrianSafetyApp */,
+				003249311C6A91AA001454B0 /* PedestrianSafetyAppTests */,
+				0032493C1C6A91AA001454B0 /* PedestrianSafetyAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0032491C1C6A91AA001454B0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0032492C1C6A91AA001454B0 /* LaunchScreen.storyboard in Resources */,
+				003249291C6A91AA001454B0 /* Assets.xcassets in Resources */,
+				003249271C6A91AA001454B0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		003249301C6A91AA001454B0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0032493B1C6A91AA001454B0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0032491A1C6A91AA001454B0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				003249241C6A91AA001454B0 /* ViewController.swift in Sources */,
+				003249221C6A91AA001454B0 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0032492E1C6A91AA001454B0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				003249371C6A91AA001454B0 /* PedestrianSafetyAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		003249391C6A91AA001454B0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				003249421C6A91AA001454B0 /* PedestrianSafetyAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		003249341C6A91AA001454B0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0032491D1C6A91AA001454B0 /* PedestrianSafetyApp */;
+			targetProxy = 003249331C6A91AA001454B0 /* PBXContainerItemProxy */;
+		};
+		0032493F1C6A91AA001454B0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0032491D1C6A91AA001454B0 /* PedestrianSafetyApp */;
+			targetProxy = 0032493E1C6A91AA001454B0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		003249251C6A91AA001454B0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				003249261C6A91AA001454B0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0032492A1C6A91AA001454B0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0032492B1C6A91AA001454B0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		003249441C6A91AA001454B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		003249451C6A91AA001454B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		003249471C6A91AA001454B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PedestrianSafetyApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.tufts.cs.PedestrianSafetyApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		003249481C6A91AA001454B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PedestrianSafetyApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.tufts.cs.PedestrianSafetyApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		0032494A1C6A91AA001454B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PedestrianSafetyAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.tufts.cs.PedestrianSafetyAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PedestrianSafetyApp.app/PedestrianSafetyApp";
+			};
+			name = Debug;
+		};
+		0032494B1C6A91AA001454B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PedestrianSafetyAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.tufts.cs.PedestrianSafetyAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PedestrianSafetyApp.app/PedestrianSafetyApp";
+			};
+			name = Release;
+		};
+		0032494D1C6A91AA001454B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PedestrianSafetyAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.tufts.cs.PedestrianSafetyAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = PedestrianSafetyApp;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		0032494E1C6A91AA001454B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PedestrianSafetyAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.tufts.cs.PedestrianSafetyAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = PedestrianSafetyApp;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		003249191C6A91AA001454B0 /* Build configuration list for PBXProject "PedestrianSafetyApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				003249441C6A91AA001454B0 /* Debug */,
+				003249451C6A91AA001454B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		003249461C6A91AA001454B0 /* Build configuration list for PBXNativeTarget "PedestrianSafetyApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				003249471C6A91AA001454B0 /* Debug */,
+				003249481C6A91AA001454B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		003249491C6A91AA001454B0 /* Build configuration list for PBXNativeTarget "PedestrianSafetyAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0032494A1C6A91AA001454B0 /* Debug */,
+				0032494B1C6A91AA001454B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		0032494C1C6A91AA001454B0 /* Build configuration list for PBXNativeTarget "PedestrianSafetyAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0032494D1C6A91AA001454B0 /* Debug */,
+				0032494E1C6A91AA001454B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 003249161C6A91AA001454B0 /* Project object */;
+}
