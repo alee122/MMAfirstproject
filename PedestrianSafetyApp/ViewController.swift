@@ -17,6 +17,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        // Ensures that button is always set correctly when app loads after being in background
+        flashlightButton.setTitle("Turn on flashlight", forState: .Normal)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,13 +33,13 @@ class ViewController: UIViewController {
             print("turning off flash!")            
             //turn off light
             toggleFlash()
-            sender.setTitle("TURN ON FLASHLIGHT", forState: .Normal)
+            sender.setTitle("Turn on flashlight", forState: .Normal)
             lightIsOn = !lightIsOn
         } else {
             print("turning on flash!")
             //turn on light
             toggleFlash()
-            sender.setTitle("TURN OFF FLASHLIGHT", forState: .Normal)
+            sender.setTitle("Turn off flashlight", forState: .Normal)
             lightIsOn = !lightIsOn
         }
         

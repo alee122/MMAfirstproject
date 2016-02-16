@@ -23,8 +23,8 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="251" id="BGg-qT-OQ7"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Kailasa-Bold" family="Kailasa" pointSize="19"/>
-                                <state key="normal" title="TURN ON FLASHLIGHT">
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <state key="normal" title="Turn on flashlight">
                                     <color key="titleColor" red="1" green="0.98158063442697807" blue="0.26972506391689111" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -34,9 +34,26 @@
                                     <action selector="flashlightButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pVc-s7-Uzq"/>
                                 </connections>
                             </button>
+                            <navigationBar contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jvl-WZ-zkM">
+                                <rect key="frame" x="0.0" y="-16" width="600" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="24L-uU-VX7"/>
+                                    <constraint firstAttribute="width" constant="600" id="9iB-9e-rAT"/>
+                                    <constraint firstAttribute="height" constant="100" id="WUF-Vl-yaO"/>
+                                </constraints>
+                                <color key="barTintColor" red="0.8784313725490196" green="0.24313725490196078" blue="0.30196078431372547" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Sunset App" id="Vrc-xZ-tUy"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="jvl-WZ-zkM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bMY-NW-hHp"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="UMG-D6-dod" secondAttribute="bottom" constant="247" id="cPw-aS-N4c"/>
                             <constraint firstItem="UMG-D6-dod" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eeb-QA-olc"/>
                             <constraint firstItem="UMG-D6-dod" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="iT1-bS-ZnZ"/>
@@ -49,7 +66,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="380" y="305"/>
+            <point key="canvasLocation" x="381" y="317"/>
         </scene>
     </scenes>
 </document>
