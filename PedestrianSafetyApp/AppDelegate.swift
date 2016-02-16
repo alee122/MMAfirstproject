@@ -28,9 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
         let vc = ViewController()
+        // Light is always turned off when app is in background
         vc.lightIsOn = false
-        print("hello")
-
     }
 
     func applicationWillEnterForeground(application: UIApplication) {
