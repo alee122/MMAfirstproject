@@ -8,19 +8,24 @@
 
 import UIKit
 import AVFoundation
+import CoreLocation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CLLocationManagerDelegate {
 
     @IBOutlet weak var flashlightButton: UIButton!
     var lightIsOn = false;
+    var locationManager:CLLocationManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        // Ensures that button is always set correctly when app loads after being in background
-        flashlightButton.setTitle("Turn on flashlight", forState: .Normal)
-        
+        // Location Manager (for getting sunset data)
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+        locationManager.startUpdatingLocation()
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,6 +48,11 @@ class ViewController: UIViewController {
             lightIsOn = !lightIsOn
         }
         
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let locValue:CLLocationCoordinate2D = manager.location!.coordinate
+        print("Current location is = \(locValue.latitude) \(locValue.longitude)")
     }
     
     func toggleFlash() {
