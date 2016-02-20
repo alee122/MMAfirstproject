@@ -39,10 +39,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.requestAlwaysAuthorization()
         locationManager.startUpdatingLocation()
         
-//        notification.alertBody = "Hello"
-//        notification.alertAction = "open" // text that is displayed after "slide to..." on the lock screen - defaults to "slide to view"
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: "handleTap:")
-        var span = MKCoordinateSpanMake(0.01, 0.01)
+        let span = MKCoordinateSpanMake(0.01, 0.01)
         var region = MKCoordinateRegion()
         region.span = span
         region.center = locationManager.location!.coordinate
@@ -60,7 +58,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         let touchLocation = gestureRecognizer.locationInView(mapView)
         print(touchLocation)
         let locationCoordinate = mapView.convertPoint(touchLocation, toCoordinateFromView: mapView)
-        let pin = Location(title: "User created pinpoint", coordinate: CLLocationCoordinate2D(latitude: locationCoordinate.latitude, longitude: locationCoordinate.longitude), info: "Pinpoint created by the user")
+        let pin = Location(title: "Dangerous area", coordinate: CLLocationCoordinate2D(latitude: locationCoordinate.latitude, longitude: locationCoordinate.longitude), info: "Pinpoint created by the user")
         
         // Store pin, add to map
         userPinpoints.append(pin)
@@ -73,7 +71,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         // Build notification object for point
         let notification = UILocalNotification()
-        notification.alertBody = "hello"
+        notification.alertBody = "You're entering an area you marked as dangerous - would you like to turn on the safety light?"
         notification.alertAction = "open"
         notification.region = geoRegion
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
