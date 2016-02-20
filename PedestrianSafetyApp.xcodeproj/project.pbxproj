@@ -14,6 +14,8 @@
 		0032492C1C6A91AA001454B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0032492A1C6A91AA001454B0 /* LaunchScreen.storyboard */; };
 		003249371C6A91AA001454B0 /* PedestrianSafetyAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003249361C6A91AA001454B0 /* PedestrianSafetyAppTests.swift */; };
 		003249421C6A91AA001454B0 /* PedestrianSafetyAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003249411C6A91AA001454B0 /* PedestrianSafetyAppUITests.swift */; };
+		626262ED1C77D75200C1BCAE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 626262EC1C77D75200C1BCAE /* MapKit.framework */; };
+		626262EF1C77E28800C1BCAE /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626262EE1C77E28800C1BCAE /* Map.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		0032493D1C6A91AA001454B0 /* PedestrianSafetyAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PedestrianSafetyAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		003249411C6A91AA001454B0 /* PedestrianSafetyAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedestrianSafetyAppUITests.swift; sourceTree = "<group>"; };
 		003249431C6A91AA001454B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		626262EC1C77D75200C1BCAE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		626262EE1C77E28800C1BCAE /* Map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				626262ED1C77D75200C1BCAE /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +82,7 @@
 		003249151C6A91AA001454B0 = {
 			isa = PBXGroup;
 			children = (
+				626262EC1C77D75200C1BCAE /* MapKit.framework */,
 				003249201C6A91AA001454B0 /* PedestrianSafetyApp */,
 				003249351C6A91AA001454B0 /* PedestrianSafetyAppTests */,
 				003249401C6A91AA001454B0 /* PedestrianSafetyAppUITests */,
@@ -100,6 +106,7 @@
 				003249211C6A91AA001454B0 /* AppDelegate.swift */,
 				003249231C6A91AA001454B0 /* ViewController.swift */,
 				003249251C6A91AA001454B0 /* Main.storyboard */,
+				626262EE1C77E28800C1BCAE /* Map.swift */,
 				003249281C6A91AA001454B0 /* Assets.xcassets */,
 				0032492A1C6A91AA001454B0 /* LaunchScreen.storyboard */,
 				0032492D1C6A91AA001454B0 /* Info.plist */,
@@ -194,6 +201,14 @@
 					0032491D1C6A91AA001454B0 = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = WC8GK6LE4R;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 0;
+							};
+						};
 					};
 					003249311C6A91AA001454B0 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -258,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				003249241C6A91AA001454B0 /* ViewController.swift in Sources */,
+				626262EF1C77E28800C1BCAE /* Map.swift in Sources */,
 				003249221C6A91AA001454B0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

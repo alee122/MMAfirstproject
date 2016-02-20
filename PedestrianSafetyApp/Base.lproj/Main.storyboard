@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,24 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UMG-D6-dod">
-                                <rect key="frame" x="175" y="244" width="251" height="111"/>
-                                <color key="backgroundColor" red="0.36130546861620105" green="0.2380171121454393" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="251" id="BGg-qT-OQ7"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                <state key="normal" title="Turn on flashlight">
-                                    <color key="titleColor" red="1" green="0.98158063442697807" blue="0.26972506391689111" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="flashlightButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pVc-s7-Uzq"/>
-                                </connections>
-                            </button>
-                            <navigationBar contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jvl-WZ-zkM">
+                            <navigationBar contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jvl-WZ-zkM">
                                 <rect key="frame" x="0.0" y="-16" width="600" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="24L-uU-VX7"/>
@@ -50,21 +34,51 @@
                                     <navigationItem title="Sunset App" id="Vrc-xZ-tUy"/>
                                 </items>
                             </navigationBar>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="VxW-dk-6mB">
+                                <rect key="frame" x="167" y="307" width="267" height="254"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="xvg-og-c98"/>
+                                    <outletCollection property="gestureRecognizers" destination="ZTL-HK-cTN" appends="YES" id="0po-GN-urW"/>
+                                </connections>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UMG-D6-dod">
+                                <rect key="frame" x="175" y="159" width="251" height="111"/>
+                                <color key="backgroundColor" red="0.36130546861620105" green="0.2380171121454393" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="251" id="BGg-qT-OQ7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <state key="normal" title="Turn on flashlight">
+                                    <color key="titleColor" red="1" green="0.98158063442697807" blue="0.26972506391689111" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="flashlightButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pVc-s7-Uzq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="VxW-dk-6mB" firstAttribute="top" secondItem="UMG-D6-dod" secondAttribute="bottom" constant="30" id="3Sc-nj-wTe"/>
+                            <constraint firstItem="jvl-WZ-zkM" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="Fr3-BE-BTL"/>
+                            <constraint firstItem="UMG-D6-dod" firstAttribute="top" secondItem="jvl-WZ-zkM" secondAttribute="bottom" constant="30" id="LWj-mc-F7W"/>
                             <constraint firstItem="jvl-WZ-zkM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bMY-NW-hHp"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="UMG-D6-dod" secondAttribute="bottom" constant="247" id="cPw-aS-N4c"/>
+                            <constraint firstItem="VxW-dk-6mB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cd6-pW-DEE"/>
                             <constraint firstItem="UMG-D6-dod" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eeb-QA-olc"/>
-                            <constraint firstItem="UMG-D6-dod" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="iT1-bS-ZnZ"/>
-                            <constraint firstItem="UMG-D6-dod" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="247" id="oj7-Pb-38f"/>
+                            <constraint firstItem="VxW-dk-6mB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wcE-AJ-1o8"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="Tap" destination="ZTL-HK-cTN" id="EdO-4A-CkT"/>
                         <outlet property="flashlightButton" destination="UMG-D6-dod" id="EtT-t2-Byg"/>
+                        <outlet property="mapView" destination="VxW-dk-6mB" id="XYh-jf-dkI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ZTL-HK-cTN"/>
             </objects>
             <point key="canvasLocation" x="381" y="317"/>
         </scene>
