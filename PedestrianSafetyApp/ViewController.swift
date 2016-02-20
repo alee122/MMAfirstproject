@@ -90,18 +90,24 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 try device.lockForConfiguration()
                 if (device.torchMode == AVCaptureTorchMode.On) {
                     device.torchMode = AVCaptureTorchMode.Off
-                } else {
-                    do {
-                        try device.setTorchModeOnWithLevel(1.0)
-                    } catch {
-                        print(error)
-                    }
+        } else {
+            do {
+                try device.setTorchModeOnWithLevel(1.0)
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(4.5 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) {
+                        device.torchMode = AVCaptureTorchMode.Off
                 }
-                device.unlockForConfiguration()
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(4.5 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) {
+                    device.torchMode = AVCaptureTorchMode.On
+                }
             } catch {
                 print(error)
             }
         }
+            device.unlockForConfiguration()
+        } catch {
+            print(error)
+        }
+    }
         
     }
 
