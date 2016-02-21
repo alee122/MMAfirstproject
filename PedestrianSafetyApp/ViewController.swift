@@ -110,17 +110,42 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 
 
     @IBAction func flashlightButton(sender: UIButton) {
+        let device = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
+        var timer = NSTimer()
+        
         if (lightIsOn) {
             print("turning off flash!")            
             //turn off light
-            toggleFlash()
-            sender.setTitle("Turn on flashlight", forState: .Normal)
+            
+            //thread.cancelAllOperations()
+            timer.invalidate()
+            device.torchMode = AVCaptureTorchMode.Off
+            
+        //    toggleFlash()
+          //  sender.setTitle("Turn on flashlight", forState: .Normal)
             lightIsOn = !lightIsOn
         } else {
             print("turning on flash!")
-            //turn on light
-            toggleFlash()
-            sender.setTitle("Turn off flashlight", forState: .Normal)
+//            //turn on light
+//            
+//            let thread = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+//            dispatch_async(thread) {
+            device.torchMode = AVCaptureTorchMode.On
+            timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "toggleFlash", userInfo: nil, repeats: true)
+                /*while(true){
+                    
+                    if (device.torchMode == AVCaptureTorchMode.Off) {
+                        device.torchMode = AVCaptureTorchMode.On
+                    } else {
+                        device.torchMode = AVCaptureTorchMode.Off
+                    }
+                    
+                    
+                }*/
+//            }
+            
+            //toggleFlash()
+            //sender.setTitle("Turn off flashlight", forState: .Normal)
             lightIsOn = !lightIsOn
         }
         
