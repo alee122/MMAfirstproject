@@ -26,11 +26,11 @@
                                 </constraints>
                                 <color key="barTintColor" red="0.87843137250000003" green="0.24313725489999999" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <textAttributes key="titleTextAttributes">
-                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="27"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </textAttributes>
                                 <items>
-                                    <navigationItem title="Sunset App" id="Vrc-xZ-tUy">
+                                    <navigationItem title="NightLite" id="Vrc-xZ-tUy">
                                         <barButtonItem key="leftBarButtonItem" image="settings_icon" style="plain" id="avw-mq-0jq">
                                             <button key="customView" opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="sua-0h-0iD">
                                                 <rect key="frame" x="20" y="38" width="30" height="30"/>
@@ -54,14 +54,16 @@
                                             <outletCollection property="gestureRecognizers" destination="ZTL-HK-cTN" appends="YES" id="0po-GN-urW"/>
                                         </connections>
                                     </mapView>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UMG-D6-dod">
+                                    <button opaque="NO" contentMode="scaleAspectFit" semanticContentAttribute="spatial" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UMG-D6-dod">
                                         <rect key="frame" x="0.0" y="413" width="320" height="80"/>
                                         <color key="backgroundColor" red="0.054901960780000002" green="0.078431372550000003" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="251" id="BGg-qT-OQ7"/>
                                             <constraint firstAttribute="height" constant="80" id="ayt-Rg-kYe"/>
                                         </constraints>
-                                        <state key="normal" image="power_icon">
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                        <inset key="contentEdgeInsets" minX="2" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="OFF">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
@@ -111,7 +113,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="power_icon" width="200" height="200"/>
-        <image name="settings_icon" width="2400" height="2400"/>
+        <image name="settings_icon" width="512" height="512"/>
     </resources>
 </document>

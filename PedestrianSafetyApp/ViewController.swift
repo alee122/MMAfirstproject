@@ -23,6 +23,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var userPinpoints : [MarkedLocation] = []
     var notifications : [UILocalNotification] = []
     
+    var timer = NSTimer()
+    
     @IBOutlet var tap: UITapGestureRecognizer!
     
     override func viewDidLoad() {
@@ -44,6 +46,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         region.center = locationManager.location!.coordinate
         mapView.setRegion(region, animated: true)
         mapView.addGestureRecognizer(gestureRecognizer)
+        
+        
+        flashlightButton.setTitle("ON", forState: .Normal)
+        flashlightButton.backgroundColor = UIColor(red: 0, green: 51/255, blue: 204/255, alpha: 1)
+        flashlightButton.setTitleColor(UIColor(red: 153/255, green: 214/255, blue: 1, alpha: 1), forState: .Normal)
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -111,42 +120,37 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 
     @IBAction func flashlightButton(sender: UIButton) {
         let device = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
-        var timer = NSTimer()
         
         if (lightIsOn) {
             print("turning off flash!")            
-            //turn off light
-            
-            //thread.cancelAllOperations()
             timer.invalidate()
-            device.torchMode = AVCaptureTorchMode.Off
-            
-        //    toggleFlash()
-          //  sender.setTitle("Turn on flashlight", forState: .Normal)
+            do {
+                try device.lockForConfiguration()
+                device.torchMode = AVCaptureTorchMode.Off
+                device.unlockForConfiguration()
+            } catch {
+                print(error)
+            }
+            sender.setTitle("ON", forState: .Normal)
+            sender.backgroundColor = UIColor(red: 0, green: 51/255, blue: 204/255, alpha: 1)
+            sender.setTitleColor(UIColor(red: 153/255, green: 214/255, blue: 1, alpha: 1), forState: .Normal)
             lightIsOn = !lightIsOn
         } else {
+            timer.invalidate()
             print("turning on flash!")
-//            //turn on light
-//            
-//            let thread = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
-//            dispatch_async(thread) {
-            device.torchMode = AVCaptureTorchMode.On
-            timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "toggleFlash", userInfo: nil, repeats: true)
-                /*while(true){
-                    
-                    if (device.torchMode == AVCaptureTorchMode.Off) {
-                        device.torchMode = AVCaptureTorchMode.On
-                    } else {
-                        device.torchMode = AVCaptureTorchMode.Off
-                    }
-                    
-                    
-                }*/
-//            }
-            
-            //toggleFlash()
-            //sender.setTitle("Turn off flashlight", forState: .Normal)
-            lightIsOn = !lightIsOn
+            do {
+                try device.lockForConfiguration()
+                device.torchMode = AVCaptureTorchMode.On
+                lightIsOn = !lightIsOn
+                timer = NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: "toggleFlash", userInfo: nil, repeats: true)
+                device.unlockForConfiguration()
+            } catch {
+                print(error)
+            }
+            sender.backgroundColor = UIColor(red: 153/255, green: 214/255, blue: 1, alpha: 1)
+            sender.setTitleColor(UIColor(red: 0, green: 51/255, blue: 204/255, alpha: 1), forState: .Normal)
+            sender.setTitle("OFF", forState: .Normal)
+
         }
         
     }
