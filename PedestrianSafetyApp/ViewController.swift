@@ -20,9 +20,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     //var notification:UILocalNotification = UILocalNotification()
     
     // Array of user created pinpoints
-    var userPinpoints : [Location] = []
-    
-    // Array of notifications
+    var userPinpoints : [MarkedLocation] = []
     var notifications : [UILocalNotification] = []
     
     @IBOutlet var tap: UITapGestureRecognizer!
@@ -58,35 +56,49 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         let touchLocation = gestureRecognizer.locationInView(mapView)
         print(touchLocation)
         let locationCoordinate = mapView.convertPoint(touchLocation, toCoordinateFromView: mapView)
-        let pin = Location(title: "Dangerous area", coordinate: CLLocationCoordinate2D(latitude: locationCoordinate.latitude, longitude: locationCoordinate.longitude), info: "Pinpoint created by the user")
         
-        // Store pin, add to map
-        userPinpoints.append(pin)
-        mapView.addAnnotation(pin)
+        // Check if the user is deleting a point
+        for pinpoint in userPinpoints {
+            if (pinpoint.region.containsCoordinate(locationCoordinate)) {
+                if let itemToRemoveIndex = userPinpoints.indexOf(pinpoint) {
+                    userPinpoints.removeAtIndex(itemToRemoveIndex)
+                }
+                print(userPinpoints)
+                mapView.removeAnnotation(pinpoint)
+                mapView.removeOverlay(pinpoint.overlay)
+                return
+            }
+        }
         
+        // Create region surrounding point
         let center:CLLocationCoordinate2D = CLLocationCoordinate2DMake(locationCoordinate.latitude, locationCoordinate.longitude)
-        let radius:CLLocationDistance = CLLocationDistance(50.0)
+        let radius:CLLocationDistance = CLLocationDistance(200.0)
         let identifier:String = "pin region"
         let geoRegion:CLCircularRegion = CLCircularRegion(center: center, radius: radius, identifier: identifier)
+        geoRegion.notifyOnEntry = true // Only notify when a user enters the region
+        let circleRegion:MKCircle = MKCircle(centerCoordinate:center, radius: radius)
         
-        // Build notification object for point
+        // Build notification object for given point
         let notification = UILocalNotification()
         notification.alertBody = "You're entering an area you marked as dangerous - would you like to turn on the safety light?"
         notification.alertAction = "open"
         notification.region = geoRegion
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
         notifications.append(notification)
+        print(notifications)
         
-        // Putting circle overlay on map
-        let circleRegion:MKCircle = MKCircle(centerCoordinate:center, radius: radius)
+        // Create the MarkedLocation object
+        let pin = MarkedLocation(coordinate: CLLocationCoordinate2D(latitude: locationCoordinate.latitude, longitude: locationCoordinate.longitude), info: "Pinpoint created by the user", region: geoRegion, notif: notification, overlay: circleRegion)
+        
+        // Store location marked by user, add to map
+        userPinpoints.append(pin)
+        mapView.addAnnotation(pin)
         mapView.addOverlay(circleRegion)
-        
-        print("Tapped at lat: \(locationCoordinate.latitude) long: \(locationCoordinate.longitude)")
     }
     
     func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
         if overlay is MKCircle {
-            var circle = MKCircleRenderer(overlay: overlay)
+            let circle = MKCircleRenderer(overlay: overlay)
             circle.strokeColor = UIColor.redColor()
             circle.fillColor = UIColor(red: 255, green: 0, blue: 0, alpha: 0.1)
             circle.lineWidth = 1
@@ -116,7 +128,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let locValue:CLLocationCoordinate2D = manager.location!.coordinate
-        print("Current location is = \(locValue.latitude) \(locValue.longitude)")
+        //print("Current location is = \(locValue.latitude) \(locValue.longitude)")
     }
     
     func toggleFlash() {
@@ -126,24 +138,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 try device.lockForConfiguration()
                 if (device.torchMode == AVCaptureTorchMode.On) {
                     device.torchMode = AVCaptureTorchMode.Off
-        } else {
-            do {
-                try device.setTorchModeOnWithLevel(1.0)
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(4.5 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) {
-                        device.torchMode = AVCaptureTorchMode.Off
+                } else {
+                    do {
+                        try device.setTorchModeOnWithLevel(1.0)
+                    } catch {
+                        print(error)
+                    }
                 }
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(4.5 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) {
-                    device.torchMode = AVCaptureTorchMode.On
-                }
+                device.unlockForConfiguration()
             } catch {
                 print(error)
             }
         }
-            device.unlockForConfiguration()
-        } catch {
-            print(error)
-        }
-    }
         
     }
 

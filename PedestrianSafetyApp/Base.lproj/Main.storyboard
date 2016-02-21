@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -15,60 +15,87 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jvl-WZ-zkM">
-                                <rect key="frame" x="0.0" y="-16" width="600" height="100"/>
+                                <rect key="frame" x="-140" y="0.0" width="600" height="75"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="24L-uU-VX7"/>
                                     <constraint firstAttribute="width" constant="600" id="9iB-9e-rAT"/>
-                                    <constraint firstAttribute="height" constant="100" id="WUF-Vl-yaO"/>
+                                    <constraint firstAttribute="height" constant="75" id="WUF-Vl-yaO"/>
                                 </constraints>
-                                <color key="barTintColor" red="0.8784313725490196" green="0.24313725490196078" blue="0.30196078431372547" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="0.87843137250000003" green="0.24313725489999999" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <textAttributes key="titleTextAttributes">
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </textAttributes>
                                 <items>
-                                    <navigationItem title="Sunset App" id="Vrc-xZ-tUy"/>
+                                    <navigationItem title="Sunset App" id="Vrc-xZ-tUy">
+                                        <barButtonItem key="leftBarButtonItem" image="settings_icon" style="plain" id="avw-mq-0jq">
+                                            <button key="customView" opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="sua-0h-0iD">
+                                                <rect key="frame" x="20" y="38" width="30" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <rect key="contentStretch" x="0.0" y="1" width="1" height="1"/>
+                                                <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                                <state key="normal" backgroundImage="settings_icon"/>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="VxW-dk-6mB">
-                                <rect key="frame" x="167" y="307" width="267" height="254"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="xvg-og-c98"/>
-                                    <outletCollection property="gestureRecognizers" destination="ZTL-HK-cTN" appends="YES" id="0po-GN-urW"/>
-                                </connections>
-                            </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UMG-D6-dod">
-                                <rect key="frame" x="175" y="159" width="251" height="111"/>
-                                <color key="backgroundColor" red="0.36130546861620105" green="0.2380171121454393" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="XPk-G9-IAZ">
+                                <rect key="frame" x="0.0" y="511" width="320" height="493"/>
+                                <subviews>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="VxW-dk-6mB">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="413"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="xvg-og-c98"/>
+                                            <outletCollection property="gestureRecognizers" destination="ZTL-HK-cTN" appends="YES" id="0po-GN-urW"/>
+                                        </connections>
+                                    </mapView>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UMG-D6-dod">
+                                        <rect key="frame" x="0.0" y="413" width="320" height="80"/>
+                                        <color key="backgroundColor" red="0.054901960780000002" green="0.078431372550000003" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="251" id="BGg-qT-OQ7"/>
+                                            <constraint firstAttribute="height" constant="80" id="ayt-Rg-kYe"/>
+                                        </constraints>
+                                        <state key="normal" image="power_icon">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="flashlightButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pVc-s7-Uzq"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="251" id="BGg-qT-OQ7"/>
+                                    <constraint firstAttribute="trailing" secondItem="UMG-D6-dod" secondAttribute="trailing" id="0Uj-K6-CAz"/>
+                                    <constraint firstItem="VxW-dk-6mB" firstAttribute="leading" secondItem="XPk-G9-IAZ" secondAttribute="leading" id="5l5-p5-2U0"/>
+                                    <constraint firstItem="UMG-D6-dod" firstAttribute="leading" secondItem="XPk-G9-IAZ" secondAttribute="leading" id="JGT-qI-AiP"/>
+                                    <constraint firstAttribute="trailing" secondItem="VxW-dk-6mB" secondAttribute="trailing" id="TMD-EY-ZgJ"/>
+                                    <constraint firstItem="UMG-D6-dod" firstAttribute="top" secondItem="VxW-dk-6mB" secondAttribute="bottom" id="aft-0i-tRN"/>
+                                    <constraint firstAttribute="bottom" secondItem="UMG-D6-dod" secondAttribute="bottom" id="xAF-LA-WSd"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                <state key="normal" title="Turn on flashlight">
-                                    <color key="titleColor" red="1" green="0.98158063442697807" blue="0.26972506391689111" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="flashlightButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pVc-s7-Uzq"/>
-                                </connections>
-                            </button>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="VxW-dk-6mB" firstAttribute="top" secondItem="UMG-D6-dod" secondAttribute="bottom" constant="30" id="3Sc-nj-wTe"/>
+                            <constraint firstItem="jvl-WZ-zkM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="1nP-w6-V6g"/>
+                            <constraint firstAttribute="bottom" secondItem="XPk-G9-IAZ" secondAttribute="bottom" id="7ps-Jh-TdF"/>
+                            <constraint firstItem="XPk-G9-IAZ" firstAttribute="top" secondItem="jvl-WZ-zkM" secondAttribute="bottom" id="9RC-lA-ag5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="XPk-G9-IAZ" secondAttribute="trailing" id="ExQ-Vc-Odi"/>
                             <constraint firstItem="jvl-WZ-zkM" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="Fr3-BE-BTL"/>
-                            <constraint firstItem="UMG-D6-dod" firstAttribute="top" secondItem="jvl-WZ-zkM" secondAttribute="bottom" constant="30" id="LWj-mc-F7W"/>
+                            <constraint firstItem="jvl-WZ-zkM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="LPd-St-7eC"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="XPk-G9-IAZ" secondAttribute="bottom" id="WWu-uL-fe9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jvl-WZ-zkM" secondAttribute="trailing" id="ZI0-fW-hI7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jvl-WZ-zkM" secondAttribute="trailing" id="a4m-My-ntY"/>
                             <constraint firstItem="jvl-WZ-zkM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bMY-NW-hHp"/>
-                            <constraint firstItem="VxW-dk-6mB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cd6-pW-DEE"/>
-                            <constraint firstItem="UMG-D6-dod" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eeb-QA-olc"/>
-                            <constraint firstItem="VxW-dk-6mB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wcE-AJ-1o8"/>
+                            <constraint firstAttribute="trailing" secondItem="XPk-G9-IAZ" secondAttribute="trailing" id="c32-XD-7Uz"/>
+                            <constraint firstAttribute="trailing" secondItem="jvl-WZ-zkM" secondAttribute="trailing" id="cQt-Gi-nd2"/>
+                            <constraint firstItem="XPk-G9-IAZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="d06-z8-OSB"/>
+                            <constraint firstItem="XPk-G9-IAZ" firstAttribute="top" secondItem="jvl-WZ-zkM" secondAttribute="bottom" id="jnK-GJ-NiQ"/>
+                            <constraint firstItem="XPk-G9-IAZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="l4j-ml-yAp"/>
                         </constraints>
                     </view>
                     <connections>
@@ -80,7 +107,11 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="ZTL-HK-cTN"/>
             </objects>
-            <point key="canvasLocation" x="381" y="317"/>
+            <point key="canvasLocation" x="203.19999999999999" y="300.09333333333331"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="power_icon" width="200" height="200"/>
+        <image name="settings_icon" width="2400" height="2400"/>
+    </resources>
 </document>

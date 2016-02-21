@@ -9,15 +9,19 @@
 import UIKit
 import MapKit
 
-class Location: NSObject, MKAnnotation {
-    var title: String?
+class MarkedLocation: NSObject, MKAnnotation {
     var coordinate: CLLocationCoordinate2D
     var info: String
+    var region: CLCircularRegion
+    var notif: UILocalNotification
+    var overlay: MKCircle
     
-    init(title: String, coordinate: CLLocationCoordinate2D, info: String) {
-        self.title = title
+    init(coordinate: CLLocationCoordinate2D, info: String, region: CLCircularRegion, notif: UILocalNotification, overlay: MKCircle) {
         self.coordinate = coordinate
         self.info = info
+        self.region = region
+        self.notif = notif
+        self.overlay = overlay
     }
 
 }
