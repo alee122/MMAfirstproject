@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0032491D1C6A91AA001454B0"
-               BuildableName = "PedestrianSafetyApp.app"
-               BlueprintName = "PedestrianSafetyApp"
-               ReferencedContainer = "container:PedestrianSafetyApp.xcodeproj">
+               BuildableName = "NightLite.app"
+               BlueprintName = "NightLite"
+               ReferencedContainer = "container:NightLite.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "003249311C6A91AA001454B0"
-               BuildableName = "PedestrianSafetyAppTests.xctest"
-               BlueprintName = "PedestrianSafetyAppTests"
-               ReferencedContainer = "container:PedestrianSafetyApp.xcodeproj">
+               BuildableName = "NightLite.xctest"
+               BlueprintName = "NightLiteTests"
+               ReferencedContainer = "container:NightLite.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0032493C1C6A91AA001454B0"
-               BuildableName = "PedestrianSafetyAppUITests.xctest"
-               BlueprintName = "PedestrianSafetyAppUITests"
-               ReferencedContainer = "container:PedestrianSafetyApp.xcodeproj">
+               BuildableName = "NightLite.xctest"
+               BlueprintName = "NightLiteUITests"
+               ReferencedContainer = "container:NightLite.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -53,9 +53,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0032491D1C6A91AA001454B0"
-            BuildableName = "PedestrianSafetyApp.app"
-            BlueprintName = "PedestrianSafetyApp"
-            ReferencedContainer = "container:PedestrianSafetyApp.xcodeproj">
+            BuildableName = "NightLite.app"
+            BlueprintName = "NightLite"
+            ReferencedContainer = "container:NightLite.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0032491D1C6A91AA001454B0"
-            BuildableName = "PedestrianSafetyApp.app"
-            BlueprintName = "PedestrianSafetyApp"
-            ReferencedContainer = "container:PedestrianSafetyApp.xcodeproj">
+            BuildableName = "NightLite.app"
+            BlueprintName = "NightLite"
+            ReferencedContainer = "container:NightLite.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,9 +95,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0032491D1C6A91AA001454B0"
-            BuildableName = "PedestrianSafetyApp.app"
-            BlueprintName = "PedestrianSafetyApp"
-            ReferencedContainer = "container:PedestrianSafetyApp.xcodeproj">
+            BuildableName = "NightLite.app"
+            BlueprintName = "NightLite"
+            ReferencedContainer = "container:NightLite.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

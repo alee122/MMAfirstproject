@@ -17,7 +17,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var mapView: MKMapView!
     var lightIsOn = false;
     var locationManager:CLLocationManager!
-    //var notification:UILocalNotification = UILocalNotification()
     
     // Array of user created pinpoints
     var userPinpoints : [MarkedLocation] = []
@@ -25,12 +24,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     var timer = NSTimer()
     
+    
     @IBOutlet var tap: UITapGestureRecognizer!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view, typically from a nib.
         
         // Location Manager (for getting sunset data)
         locationManager = CLLocationManager()
@@ -40,6 +39,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.startUpdatingLocation()
         
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: "handleTap:")
+        
+        // MapKit setup
         let span = MKCoordinateSpanMake(0.01, 0.01)
         var region = MKCoordinateRegion()
         region.span = span
@@ -48,9 +49,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         mapView.addGestureRecognizer(gestureRecognizer)
         
         
-        flashlightButton.setTitle("ON", forState: .Normal)
+        flashlightButton.setTitle("Turn on light", forState: .Normal)
         flashlightButton.backgroundColor = UIColor(red: 0, green: 51/255, blue: 204/255, alpha: 1)
         flashlightButton.setTitleColor(UIColor(red: 153/255, green: 214/255, blue: 1, alpha: 1), forState: .Normal)
+        
+
+        let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge], categories: nil)
+        UIApplication.sharedApplication().registerUserNotificationSettings(settings)
         
         
     }
@@ -61,9 +66,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func handleTap(gestureRecognizer:UITapGestureRecognizer) {
-        print("Registering tap")
         let touchLocation = gestureRecognizer.locationInView(mapView)
-        print(touchLocation)
         let locationCoordinate = mapView.convertPoint(touchLocation, toCoordinateFromView: mapView)
         
         // Check if the user is deleting a point
@@ -72,7 +75,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 if let itemToRemoveIndex = userPinpoints.indexOf(pinpoint) {
                     userPinpoints.removeAtIndex(itemToRemoveIndex)
                 }
-                print(userPinpoints)
                 mapView.removeAnnotation(pinpoint)
                 mapView.removeOverlay(pinpoint.overlay)
                 return
@@ -81,7 +83,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         // Create region surrounding point
         let center:CLLocationCoordinate2D = CLLocationCoordinate2DMake(locationCoordinate.latitude, locationCoordinate.longitude)
-        let radius:CLLocationDistance = CLLocationDistance(200.0)
+        let radius:CLLocationDistance = CLLocationDistance(50.0)
         let identifier:String = "pin region"
         let geoRegion:CLCircularRegion = CLCircularRegion(center: center, radius: radius, identifier: identifier)
         geoRegion.notifyOnEntry = true // Only notify when a user enters the region
@@ -90,11 +92,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         // Build notification object for given point
         let notification = UILocalNotification()
         notification.alertBody = "You're entering an area you marked as dangerous - would you like to turn on the safety light?"
-        notification.alertAction = "open"
-        notification.region = geoRegion
-        UIApplication.sharedApplication().scheduleLocalNotification(notification)
-        notifications.append(notification)
-        print(notifications)
+        notification.alertAction = "Open"
+    
+        // The built-in didEnterRegion method was too inconsistent for demo purposes
+        //notification.region = geoRegion
+        //UIApplication.sharedApplication().scheduleLocalNotification(notification)
         
         // Create the MarkedLocation object
         let pin = MarkedLocation(coordinate: CLLocationCoordinate2D(latitude: locationCoordinate.latitude, longitude: locationCoordinate.longitude), info: "Pinpoint created by the user", region: geoRegion, notif: notification, overlay: circleRegion)
@@ -105,11 +107,19 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         mapView.addOverlay(circleRegion)
     }
     
+    func locationManager(manager: CLLocationManager, didStartMonitoringForRegion region: CLRegion) {
+        print("Starting monitoring \(region.identifier)")
+    }
+    
+    func locationManager(manager: CLLocationManager, didEnterRegion region: CLRegion) {
+        print("Entered Region \(region.identifier)")
+    }
+    
     func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
         if overlay is MKCircle {
             let circle = MKCircleRenderer(overlay: overlay)
-            circle.strokeColor = UIColor.redColor()
-            circle.fillColor = UIColor(red: 255, green: 0, blue: 0, alpha: 0.1)
+            circle.strokeColor = UIColor(red: 221/255, green: 35/255, blue: 68/255, alpha: 1)
+            circle.fillColor = UIColor(red: 221/255, green: 35/255, blue: 68/255, alpha: 0.1)
             circle.lineWidth = 1
             return circle
         } else {
@@ -122,7 +132,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         let device = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
         
         if (lightIsOn) {
-            print("turning off flash!")            
             timer.invalidate()
             do {
                 try device.lockForConfiguration()
@@ -131,13 +140,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             } catch {
                 print(error)
             }
-            sender.setTitle("ON", forState: .Normal)
+            sender.setTitle("Turn on light", forState: .Normal)
             sender.backgroundColor = UIColor(red: 0, green: 51/255, blue: 204/255, alpha: 1)
             sender.setTitleColor(UIColor(red: 153/255, green: 214/255, blue: 1, alpha: 1), forState: .Normal)
             lightIsOn = !lightIsOn
         } else {
             timer.invalidate()
-            print("turning on flash!")
             do {
                 try device.lockForConfiguration()
                 device.torchMode = AVCaptureTorchMode.On
@@ -149,7 +157,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             }
             sender.backgroundColor = UIColor(red: 153/255, green: 214/255, blue: 1, alpha: 1)
             sender.setTitleColor(UIColor(red: 0, green: 51/255, blue: 204/255, alpha: 1), forState: .Normal)
-            sender.setTitle("OFF", forState: .Normal)
+            sender.setTitle("Turn off light", forState: .Normal)
 
         }
         
@@ -157,7 +165,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let locValue:CLLocationCoordinate2D = manager.location!.coordinate
-        //print("Current location is = \(locValue.latitude) \(locValue.longitude)")
+        
+        // For demo purposes, we are using didUpdateLocations to check if we are in an 
+        // unsafe region, rather than using the built-in scheduling for UILocalNotification
+        for pinpoint in userPinpoints {
+            if (pinpoint.region.containsCoordinate(locValue)) {
+                let notification = pinpoint.notif
+                print(notification)
+                UIApplication.sharedApplication().presentLocalNotificationNow(notification)
+            }
+        }
     }
     
     func toggleFlash() {

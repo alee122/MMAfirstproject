@@ -36,17 +36,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0032491E1C6A91AA001454B0 /* PedestrianSafetyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PedestrianSafetyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0032491E1C6A91AA001454B0 /* NightLite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NightLite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		003249211C6A91AA001454B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		003249231C6A91AA001454B0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		003249261C6A91AA001454B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		003249281C6A91AA001454B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0032492B1C6A91AA001454B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0032492D1C6A91AA001454B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		003249321C6A91AA001454B0 /* PedestrianSafetyAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PedestrianSafetyAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		003249321C6A91AA001454B0 /* NightLite.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NightLite.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		003249361C6A91AA001454B0 /* PedestrianSafetyAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedestrianSafetyAppTests.swift; sourceTree = "<group>"; };
 		003249381C6A91AA001454B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0032493D1C6A91AA001454B0 /* PedestrianSafetyAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PedestrianSafetyAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0032493D1C6A91AA001454B0 /* NightLite.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NightLite.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		003249411C6A91AA001454B0 /* PedestrianSafetyAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedestrianSafetyAppUITests.swift; sourceTree = "<group>"; };
 		003249431C6A91AA001454B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		626262EC1C77D75200C1BCAE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -93,9 +93,9 @@
 		0032491F1C6A91AA001454B0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0032491E1C6A91AA001454B0 /* PedestrianSafetyApp.app */,
-				003249321C6A91AA001454B0 /* PedestrianSafetyAppTests.xctest */,
-				0032493D1C6A91AA001454B0 /* PedestrianSafetyAppUITests.xctest */,
+				0032491E1C6A91AA001454B0 /* NightLite.app */,
+				003249321C6A91AA001454B0 /* NightLite.xctest */,
+				0032493D1C6A91AA001454B0 /* NightLite.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -135,9 +135,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0032491D1C6A91AA001454B0 /* PedestrianSafetyApp */ = {
+		0032491D1C6A91AA001454B0 /* NightLite */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 003249461C6A91AA001454B0 /* Build configuration list for PBXNativeTarget "PedestrianSafetyApp" */;
+			buildConfigurationList = 003249461C6A91AA001454B0 /* Build configuration list for PBXNativeTarget "NightLite" */;
 			buildPhases = (
 				0032491A1C6A91AA001454B0 /* Sources */,
 				0032491B1C6A91AA001454B0 /* Frameworks */,
@@ -147,14 +147,14 @@
 			);
 			dependencies = (
 			);
-			name = PedestrianSafetyApp;
+			name = NightLite;
 			productName = PedestrianSafetyApp;
-			productReference = 0032491E1C6A91AA001454B0 /* PedestrianSafetyApp.app */;
+			productReference = 0032491E1C6A91AA001454B0 /* NightLite.app */;
 			productType = "com.apple.product-type.application";
 		};
-		003249311C6A91AA001454B0 /* PedestrianSafetyAppTests */ = {
+		003249311C6A91AA001454B0 /* NightLiteTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 003249491C6A91AA001454B0 /* Build configuration list for PBXNativeTarget "PedestrianSafetyAppTests" */;
+			buildConfigurationList = 003249491C6A91AA001454B0 /* Build configuration list for PBXNativeTarget "NightLiteTests" */;
 			buildPhases = (
 				0032492E1C6A91AA001454B0 /* Sources */,
 				0032492F1C6A91AA001454B0 /* Frameworks */,
@@ -165,14 +165,14 @@
 			dependencies = (
 				003249341C6A91AA001454B0 /* PBXTargetDependency */,
 			);
-			name = PedestrianSafetyAppTests;
+			name = NightLiteTests;
 			productName = PedestrianSafetyAppTests;
-			productReference = 003249321C6A91AA001454B0 /* PedestrianSafetyAppTests.xctest */;
+			productReference = 003249321C6A91AA001454B0 /* NightLite.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		0032493C1C6A91AA001454B0 /* PedestrianSafetyAppUITests */ = {
+		0032493C1C6A91AA001454B0 /* NightLiteUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0032494C1C6A91AA001454B0 /* Build configuration list for PBXNativeTarget "PedestrianSafetyAppUITests" */;
+			buildConfigurationList = 0032494C1C6A91AA001454B0 /* Build configuration list for PBXNativeTarget "NightLiteUITests" */;
 			buildPhases = (
 				003249391C6A91AA001454B0 /* Sources */,
 				0032493A1C6A91AA001454B0 /* Frameworks */,
@@ -183,9 +183,9 @@
 			dependencies = (
 				0032493F1C6A91AA001454B0 /* PBXTargetDependency */,
 			);
-			name = PedestrianSafetyAppUITests;
+			name = NightLiteUITests;
 			productName = PedestrianSafetyAppUITests;
-			productReference = 0032493D1C6A91AA001454B0 /* PedestrianSafetyAppUITests.xctest */;
+			productReference = 0032493D1C6A91AA001454B0 /* NightLite.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -202,6 +202,9 @@
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = WC8GK6LE4R;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.Maps.iOS = {
 								enabled = 1;
 							};
@@ -220,7 +223,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 003249191C6A91AA001454B0 /* Build configuration list for PBXProject "PedestrianSafetyApp" */;
+			buildConfigurationList = 003249191C6A91AA001454B0 /* Build configuration list for PBXProject "NightLite" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -233,9 +236,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0032491D1C6A91AA001454B0 /* PedestrianSafetyApp */,
-				003249311C6A91AA001454B0 /* PedestrianSafetyAppTests */,
-				0032493C1C6A91AA001454B0 /* PedestrianSafetyAppUITests */,
+				0032491D1C6A91AA001454B0 /* NightLite */,
+				003249311C6A91AA001454B0 /* NightLiteTests */,
+				0032493C1C6A91AA001454B0 /* NightLiteUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -299,12 +302,12 @@
 /* Begin PBXTargetDependency section */
 		003249341C6A91AA001454B0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0032491D1C6A91AA001454B0 /* PedestrianSafetyApp */;
+			target = 0032491D1C6A91AA001454B0 /* NightLite */;
 			targetProxy = 003249331C6A91AA001454B0 /* PBXContainerItemProxy */;
 		};
 		0032493F1C6A91AA001454B0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0032491D1C6A91AA001454B0 /* PedestrianSafetyApp */;
+			target = 0032491D1C6A91AA001454B0 /* NightLite */;
 			targetProxy = 0032493E1C6A91AA001454B0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -421,7 +424,7 @@
 				INFOPLIST_FILE = PedestrianSafetyApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.tufts.cs.PedestrianSafetyApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = NightLite;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
@@ -435,7 +438,7 @@
 				INFOPLIST_FILE = PedestrianSafetyApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.tufts.cs.PedestrianSafetyApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = NightLite;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
@@ -447,8 +450,8 @@
 				INFOPLIST_FILE = PedestrianSafetyAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.tufts.cs.PedestrianSafetyAppTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PedestrianSafetyApp.app/PedestrianSafetyApp";
+				PRODUCT_NAME = NightLite;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NightLite.app/NightLite";
 			};
 			name = Debug;
 		};
@@ -459,8 +462,8 @@
 				INFOPLIST_FILE = PedestrianSafetyAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.tufts.cs.PedestrianSafetyAppTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PedestrianSafetyApp.app/PedestrianSafetyApp";
+				PRODUCT_NAME = NightLite;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NightLite.app/NightLite";
 			};
 			name = Release;
 		};
@@ -470,7 +473,7 @@
 				INFOPLIST_FILE = PedestrianSafetyAppUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.tufts.cs.PedestrianSafetyAppUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = NightLite;
 				TEST_TARGET_NAME = PedestrianSafetyApp;
 				USES_XCTRUNNER = YES;
 			};
@@ -482,7 +485,7 @@
 				INFOPLIST_FILE = PedestrianSafetyAppUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.tufts.cs.PedestrianSafetyAppUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = NightLite;
 				TEST_TARGET_NAME = PedestrianSafetyApp;
 				USES_XCTRUNNER = YES;
 			};
@@ -491,7 +494,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		003249191C6A91AA001454B0 /* Build configuration list for PBXProject "PedestrianSafetyApp" */ = {
+		003249191C6A91AA001454B0 /* Build configuration list for PBXProject "NightLite" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				003249441C6A91AA001454B0 /* Debug */,
@@ -500,7 +503,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		003249461C6A91AA001454B0 /* Build configuration list for PBXNativeTarget "PedestrianSafetyApp" */ = {
+		003249461C6A91AA001454B0 /* Build configuration list for PBXNativeTarget "NightLite" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				003249471C6A91AA001454B0 /* Debug */,
@@ -509,7 +512,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		003249491C6A91AA001454B0 /* Build configuration list for PBXNativeTarget "PedestrianSafetyAppTests" */ = {
+		003249491C6A91AA001454B0 /* Build configuration list for PBXNativeTarget "NightLiteTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0032494A1C6A91AA001454B0 /* Debug */,
@@ -518,7 +521,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0032494C1C6A91AA001454B0 /* Build configuration list for PBXNativeTarget "PedestrianSafetyAppUITests" */ = {
+		0032494C1C6A91AA001454B0 /* Build configuration list for PBXNativeTarget "NightLiteUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0032494D1C6A91AA001454B0 /* Debug */,

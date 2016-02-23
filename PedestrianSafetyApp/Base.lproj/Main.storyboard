@@ -9,7 +9,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PedestrianSafetyApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="NightLite" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -26,7 +26,7 @@
                                 </constraints>
                                 <color key="barTintColor" red="0.87843137250000003" green="0.24313725489999999" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <textAttributes key="titleTextAttributes">
-                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="27"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="27"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </textAttributes>
                                 <items>
@@ -46,7 +46,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="XPk-G9-IAZ">
                                 <rect key="frame" x="0.0" y="511" width="320" height="493"/>
                                 <subviews>
-                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="VxW-dk-6mB">
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VxW-dk-6mB">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="413"/>
                                         <gestureRecognizers/>
                                         <connections>
@@ -61,9 +61,9 @@
                                             <constraint firstAttribute="width" constant="251" id="BGg-qT-OQ7"/>
                                             <constraint firstAttribute="height" constant="80" id="ayt-Rg-kYe"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
                                         <inset key="contentEdgeInsets" minX="2" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="OFF">
+                                        <state key="normal" title="Turn on light">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
@@ -83,15 +83,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="jvl-WZ-zkM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="1nP-w6-V6g"/>
                             <constraint firstAttribute="bottom" secondItem="XPk-G9-IAZ" secondAttribute="bottom" id="7ps-Jh-TdF"/>
                             <constraint firstItem="XPk-G9-IAZ" firstAttribute="top" secondItem="jvl-WZ-zkM" secondAttribute="bottom" id="9RC-lA-ag5"/>
                             <constraint firstAttribute="trailingMargin" secondItem="XPk-G9-IAZ" secondAttribute="trailing" id="ExQ-Vc-Odi"/>
                             <constraint firstItem="jvl-WZ-zkM" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="Fr3-BE-BTL"/>
                             <constraint firstItem="jvl-WZ-zkM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="LPd-St-7eC"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="XPk-G9-IAZ" secondAttribute="bottom" id="WWu-uL-fe9"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="jvl-WZ-zkM" secondAttribute="trailing" id="ZI0-fW-hI7"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="jvl-WZ-zkM" secondAttribute="trailing" id="a4m-My-ntY"/>
                             <constraint firstItem="jvl-WZ-zkM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bMY-NW-hHp"/>
                             <constraint firstAttribute="trailing" secondItem="XPk-G9-IAZ" secondAttribute="trailing" id="c32-XD-7Uz"/>
                             <constraint firstAttribute="trailing" secondItem="jvl-WZ-zkM" secondAttribute="trailing" id="cQt-Gi-nd2"/>
@@ -113,6 +110,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="settings_icon" width="512" height="512"/>
+        <image name="settings_icon" width="2400" height="2400"/>
     </resources>
 </document>
