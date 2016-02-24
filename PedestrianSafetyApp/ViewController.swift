@@ -164,31 +164,28 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let locValue:CLLocationCoordinate2D = manager.location!.coordinate
-        
         let date = NSDate()
         let calendar = NSCalendar.currentCalendar()
         let components = calendar.components([.Hour, .Minute], fromDate: date)
         let hr = components.hour
         let mins = components.minute
-
-        if (isDark(hr, minute: mins)) {
+        
+        // Checks if in sunset time range and that app is in background (we only display notifs if in background)
+        if (isDark(hr, minute: mins) && UIApplication.sharedApplication().applicationState == .Background) {
             for pinpoint in userPinpoints {
                 if (pinpoint.region.containsCoordinate(locValue) && !pinpoint.displayedNotif) {
                     let notification = pinpoint.notif
-                    if (UIApplication.sharedApplication().applicationState == .Background) {
-                        UIApplication.sharedApplication().presentLocalNotificationNow(notification)
-                        // This should probably be on a timer in the future
-                        // Right now, we display the notification only once
-                        pinpoint.displayedNotif = true
-                    }
-                    
+                    UIApplication.sharedApplication().presentLocalNotificationNow(notification)
+                    // This should probably be on a timer in the future
+                    // Right now, we display the notification only once
+                    pinpoint.displayedNotif = true
                 }
             }
         }
     }
     
     func isDark(hour: Int, minute: Int) -> Bool {
-        // In the future, could use API to fetch specific sunset data
+        // In the future, would use API to fetch specific sunset data
         if ((hour >= 5 && hour <= 23) || (hour >= 0 && hour <= 7)) {
             return true
         }
