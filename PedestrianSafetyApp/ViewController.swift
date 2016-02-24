@@ -82,7 +82,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         // Create region surrounding point
         let center:CLLocationCoordinate2D = CLLocationCoordinate2DMake(locationCoordinate.latitude, locationCoordinate.longitude)
-        let radius:CLLocationDistance = CLLocationDistance(10.0)
+        let radius:CLLocationDistance = CLLocationDistance(25.0)
         let identifier:String = "pin region"
         let geoRegion:CLCircularRegion = CLCircularRegion(center: center, radius: radius, identifier: identifier)
         geoRegion.notifyOnEntry = true // Only notify when a user enters the region
