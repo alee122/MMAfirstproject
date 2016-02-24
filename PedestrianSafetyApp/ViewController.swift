@@ -20,22 +20,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     // Array of user created pinpoints
     var userPinpoints : [MarkedLocation] = []
-    var notifications : [UILocalNotification] = []
     
     var timer = NSTimer()
-    
-    
+
     @IBOutlet var tap: UITapGestureRecognizer!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Location Manager (for getting sunset data)
+        // Location Manager
         locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestAlwaysAuthorization()
+        locationManager.allowsBackgroundLocationUpdates = true
         locationManager.startUpdatingLocation()
         
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: "handleTap:")
@@ -45,6 +43,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         var region = MKCoordinateRegion()
         region.span = span
         region.center = locationManager.location!.coordinate
+        
         mapView.setRegion(region, animated: true)
         mapView.addGestureRecognizer(gestureRecognizer)
         
@@ -83,7 +82,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         // Create region surrounding point
         let center:CLLocationCoordinate2D = CLLocationCoordinate2DMake(locationCoordinate.latitude, locationCoordinate.longitude)
-        let radius:CLLocationDistance = CLLocationDistance(50.0)
+        let radius:CLLocationDistance = CLLocationDistance(10.0)
         let identifier:String = "pin region"
         let geoRegion:CLCircularRegion = CLCircularRegion(center: center, radius: radius, identifier: identifier)
         geoRegion.notifyOnEntry = true // Only notify when a user enters the region
@@ -99,7 +98,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         //UIApplication.sharedApplication().scheduleLocalNotification(notification)
         
         // Create the MarkedLocation object
-        let pin = MarkedLocation(coordinate: CLLocationCoordinate2D(latitude: locationCoordinate.latitude, longitude: locationCoordinate.longitude), info: "Pinpoint created by the user", region: geoRegion, notif: notification, overlay: circleRegion)
+        let pin = MarkedLocation(coordinate: CLLocationCoordinate2D(latitude: locationCoordinate.latitude, longitude: locationCoordinate.longitude), info: "Pinpoint created by the user", region: geoRegion, notif: notification, overlay: circleRegion, displayedNotif: false)
         
         // Store location marked by user, add to map
         userPinpoints.append(pin)
@@ -166,15 +165,34 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let locValue:CLLocationCoordinate2D = manager.location!.coordinate
         
-        // For demo purposes, we are using didUpdateLocations to check if we are in an 
-        // unsafe region, rather than using the built-in scheduling for UILocalNotification
-        for pinpoint in userPinpoints {
-            if (pinpoint.region.containsCoordinate(locValue)) {
-                let notification = pinpoint.notif
-                print(notification)
-                UIApplication.sharedApplication().presentLocalNotificationNow(notification)
+        let date = NSDate()
+        let calendar = NSCalendar.currentCalendar()
+        let components = calendar.components([.Hour, .Minute], fromDate: date)
+        let hr = components.hour
+        let mins = components.minute
+
+        if (isDark(hr, minute: mins)) {
+            for pinpoint in userPinpoints {
+                if (pinpoint.region.containsCoordinate(locValue) && !pinpoint.displayedNotif) {
+                    let notification = pinpoint.notif
+                    if(UIApplication.sharedApplication().applicationState == .Background) {
+                        UIApplication.sharedApplication().presentLocalNotificationNow(notification)
+                        // This should probably be on a timer in the future
+                        // Right now, we display the notification only once
+                        pinpoint.displayedNotif = true
+                    }
+                    
+                }
             }
         }
+    }
+    
+    func isDark(hour: Int, minute: Int) -> Bool {
+        // In the future, could use API to fetch specific sunset data
+        if ((hour >= 12 && hour <= 23) || (hour >= 0 && hour <= 7)) {
+            return true
+        }
+        return false
     }
     
     func toggleFlash() {

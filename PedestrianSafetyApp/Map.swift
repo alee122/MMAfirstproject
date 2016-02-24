@@ -15,13 +15,15 @@ class MarkedLocation: NSObject, MKAnnotation {
     var region: CLCircularRegion
     var notif: UILocalNotification
     var overlay: MKCircle
+    var displayedNotif: Bool
     
-    init(coordinate: CLLocationCoordinate2D, info: String, region: CLCircularRegion, notif: UILocalNotification, overlay: MKCircle) {
+    init(coordinate: CLLocationCoordinate2D, info: String, region: CLCircularRegion, notif: UILocalNotification, overlay: MKCircle, displayedNotif: Bool) {
         self.coordinate = coordinate
         self.info = info
         self.region = region
         self.notif = notif
         self.overlay = overlay
+        self.displayedNotif = displayedNotif
     }
 
 }

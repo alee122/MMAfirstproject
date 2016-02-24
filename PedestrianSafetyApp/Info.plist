@@ -26,10 +26,13 @@
 	<true/>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Sunset App needs your location to pull local sunset data</string>
+	<key>NSLocationWhenInUsageDescription</key>
+	<string>Nightlite needs your location!</string>
 	<key>UIApplicationExitsOnSuspend</key>
 	<false/>
 	<key>UIBackgroundModes</key>
 	<array>
+		<string>fetch</string>
 		<string>location</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
@@ -53,5 +56,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>allowsBackgroundLocationUpdates</key>
+	<true/>
+	<key>pausesLocationUpdatesAutomaticall</key>
+	<false/>
 </dict>
 </plist>

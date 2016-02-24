@@ -7,18 +7,24 @@
 //
 
 import UIKit
+import CoreLocation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var vc = ViewController()
+    var inBackground: Bool = false
+
+    
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         let notificationType = UIUserNotificationType.Alert
         let settings = UIUserNotificationSettings(forTypes: notificationType, categories: nil)
         application.registerUserNotificationSettings(settings)
+        
+        //self.coreLocationController = CoreLocationController()
         
         return true
     }
@@ -34,6 +40,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var rootViewController = self.window!.rootViewController as! ViewController
         rootViewController.lightIsOn = true
         rootViewController.flashlightButton(rootViewController.flashlightButton)
+        inBackground = true
+        print("IN background")
+        
+        rootViewController.locationManager.startUpdatingLocation()
 
     }
 

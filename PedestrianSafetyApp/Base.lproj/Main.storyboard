@@ -110,6 +110,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="settings_icon" width="2400" height="2400"/>
+        <image name="settings_icon" width="256" height="256"/>
     </resources>
 </document>
